@@ -1,0 +1,103 @@
+@use "../../styles/variables";
+
+.main {
+    padding: 10rem;
+}
+
+.card-main {
+    position: relative;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 5px;
+    // border: 1px solid white;
+
+    &__img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        max-width: 37rem;
+        width: 37rem;
+        height: 24rem;
+        overflow: hidden;
+        border: none;
+    }
+
+    &__lader {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        max-width: 37rem;
+        width: 37rem;
+        padding: 4.5rem;
+        background-color: white;
+        color: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__title {
+        font-size: 3rem;
+        margin: 0;
+    }
+
+    &__text {
+        margin: 0;
+    }
+}
+
+@media (max-width: variables.$mobile) {
+    .main {
+        padding: 5rem;
+    }
+
+    .card-main {
+        position: static;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        height: auto;
+
+        &__img {
+            width: 100%;
+            position: static;
+            height: auto;
+        }
+
+        &__lader {
+            position: static;
+            width: 100%;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        &__title {
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+@media (max-width: variables.$minMobile) {
+    .main {
+        padding: 2rem 2rem;
+    }
+
+    .card-main {
+        gap: 3rem;
+
+        &__img {
+            padding: 0;
+        }
+
+        &__lader {
+            padding: 0;
+        }
+
+        &__title {
+            font-size: 1.9rem;
+            margin-bottom: 2rem;
+        }
+    }
+}
